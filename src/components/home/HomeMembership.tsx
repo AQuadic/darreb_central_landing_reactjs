@@ -1,7 +1,7 @@
 const HomeMembership = () => {
     return (
         <section className="bg-[#F3F7FC] py-19">
-            <div className="container flex l:flex-row flex-col items-center">
+            <div className="container flex lg:flex-row flex-col items-center">
                 <div>
                     <h2 className="text-[#001B3F] md:text-[32px] text-xl font-semibold">Full Control of Your Members</h2>
                     <p className="text-[#565555] md:text-2xl text-base font-medium leading-[150%] mt-6">
