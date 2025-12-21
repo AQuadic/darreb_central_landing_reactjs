@@ -5,7 +5,7 @@ import Unlimited from "../icons/pricing/Unlimited"
 
 const PricingCards = () => {
     return (
-        <section className="container my-12">
+        <section className="container md:my-24 my-8">
             <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">
                 Fitness Plans to Match Every Goal
             </h2>
@@ -75,6 +75,9 @@ const PricingCards = () => {
                 </div>
 
                 <div className="relative w-94.75 h-240.5 rounded-[32px] p-0.5 bg-linear-to-r from-[#15509C] to-[#071C36]">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-31.25 h-8.5 bg-[linear-gradient(90deg,#15509C_0%,#071C36_100%)] rounded-[24px] text-[#FEFEFE] text-lg font-bold flex items-center justify-center">
+                        Best Seller
+                    </div>
                     <div className="w-full h-full rounded-[30px] bg-[#F2F2F9] py-8 px-4 flex flex-col justify-between">
                         <div>
                             <div className="flex items-center gap-2">
