@@ -16,11 +16,11 @@ const BlogContact = () => {
                 Reach out to us anytime — our team is always ready to help you find the best solutions, answer <br /> your questions, and guide you toward growing your sports business with confidence.
             </p>
 
-            <div className="md:mt-17 mt-6 flex items-center justify-between gap-6">
+            <div className="md:mt-17 mt-6 flex flex-wrap items-center justify-between gap-6">
                 <form>
                     <div className="flex flex-wrap gap-6">
                         {/* name */}
-                        <div className="flex flex-col gap-4">
+                        <div className="w-full flex flex-col gap-4">
                             <label 
                                 htmlFor="name"
                                 className="text-[#0F0F0F] text-base font-medium"
@@ -30,12 +30,12 @@ const BlogContact = () => {
                             <input 
                                 type="text" 
                                 name="name" 
-                                className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                                className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                                 placeholder="Enter your name"
                             />
                         </div>
                         {/* Company name */}
-                        <div className="flex flex-col gap-4">
+                        <div className="w-full flex flex-col gap-4">
                             <label 
                                 htmlFor="company_name"
                                 className="text-[#0F0F0F] text-base font-medium"
@@ -45,7 +45,7 @@ const BlogContact = () => {
                             <input 
                                 type="text" 
                                 name="company_name" 
-                                className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                                className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                                 placeholder="Enter your company name"
                             />
                         </div>
@@ -53,7 +53,7 @@ const BlogContact = () => {
 
                     <div className="flex flex-wrap gap-6 mt-10">
                         {/* Type of Business */}
-                        <div className="flex flex-col gap-4">
+                        <div className="w-full flex flex-col gap-4">
                             <label 
                                 htmlFor="type_of_business"
                                 className="text-[#0F0F0F] text-base font-medium"
@@ -61,7 +61,7 @@ const BlogContact = () => {
                                 Type of Business
                             </label>
                             <Select>
-                            <SelectTrigger className="w-[384px] h-14! rounded-4xl">
+                            <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
                                 <SelectValue placeholder="Choose type" />
                             </SelectTrigger>
                             <SelectContent>
@@ -72,7 +72,7 @@ const BlogContact = () => {
                             </Select>
                         </div>
                         {/* Number of Branches */}
-                        <div className="flex flex-col gap-4">
+                        <div className="w-full flex flex-col gap-4">
                             <label 
                                 htmlFor="NOF_branches"
                                 className="text-[#0F0F0F] text-base font-medium"
@@ -80,7 +80,7 @@ const BlogContact = () => {
                                 Number of Branches
                             </label>
                             <Select>
-                            <SelectTrigger className="w-[384px] h-14! rounded-4xl">
+                            <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
                                 <SelectValue placeholder="Choose number" />
                             </SelectTrigger>
                             <SelectContent>
@@ -93,7 +93,7 @@ const BlogContact = () => {
                     </div>
 
                     <div className="flex flex-wrap gap-6 mt-10">
-                        <div className="flex flex-col gap-4">
+                        <div className="w-full flex flex-col gap-4">
                             <label 
                                 htmlFor="name"
                                 className="text-[#0F0F0F] text-base font-medium"
@@ -103,11 +103,11 @@ const BlogContact = () => {
                             <input 
                                 type="tel" 
                                 name="tel" 
-                                className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                                className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                                 placeholder="+20"
                             />
                         </div>
-                        <div className="flex flex-col gap-4">
+                        <div className="w-full flex flex-col gap-4">
                             <label 
                                 htmlFor="company_name"
                                 className="text-[#0F0F0F] text-base font-medium"
@@ -117,7 +117,7 @@ const BlogContact = () => {
                             <input 
                                 type="email" 
                                 name="email" 
-                                className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                                className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                                 placeholder="Enter your email"
                             />
                         </div>
@@ -152,7 +152,7 @@ const BlogContact = () => {
                     <img 
                         src="/images/blog/blog_contact.jpg"
                         alt="blog contact"
-                        className="w-[384px] h-142 opacity-50 rounded-4xl"
+                        className="md:w-[384px] w-full h-142 opacity-50 rounded-4xl"
                     />
                 </div>
             </div>

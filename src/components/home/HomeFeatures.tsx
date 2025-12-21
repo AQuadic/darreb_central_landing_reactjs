@@ -21,7 +21,7 @@ const HomeFeatures = () => {
   ];
 
   return (
-    <section className="container py-17 h-dvh">
+    <section className="container py-17">
       <h2 className="md:block hidden text-[#001B3F] text-[32px] font-semibold leading-[100%] text-center">
         We Make Managing Your Business Easy and Professional
       </h2>
