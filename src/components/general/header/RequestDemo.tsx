@@ -1,15 +1,18 @@
-import { useLocation } from "react-router-dom";
+"use client";
 
-const RequestDemo = () => {
-  const { pathname } = useLocation();
-  const isHomePage = pathname === "/";
-  const buttonClass = isHomePage ? "bg-[#FEFEFE33] text-white" : "text-white";
+interface Props {
+  isHome?: boolean;
+}
+
+const RequestDemo = ({ isHome = false }: Props) => {
   const gradient = "linear-gradient(90deg, #15509C 0%, #071C36 100%)";
 
   return (
     <button
-      className={`${buttonClass} px-4 py-3 rounded-2xl text-lg font-semibold`}
-      style={!isHomePage ? { background: gradient } : undefined}
+      className={`px-4 py-3 rounded-2xl text-lg font-semibold transition-all duration-300 ${
+        isHome ? "bg-[#FEFEFE33] text-white" : "text-white shadow-lg"
+      }`}
+      style={!isHome ? { background: gradient } : undefined}
     >
       Request a Demo
     </button>
