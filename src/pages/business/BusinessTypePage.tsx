@@ -1,3 +1,4 @@
+import BrandedUserExperience from "@/components/business/BrandedUserExperience"
 import BusinessTypeHeader from "@/components/business/BusinessTypeHeader"
 import CompletePlatform from "@/components/business/CompletePlatform"
 import DataDriven from "@/components/business/DataDriven"
@@ -10,6 +11,7 @@ const BusinessTypePage = () => {
       <CompletePlatform />
       <ShapingAthletes />
       <DataDriven />
+      <BrandedUserExperience />
     </div>
   )
 }

@@ -78,7 +78,7 @@ const Header = () => {
   <>
     <header
       className={`container flex items-center justify-between fixed top-0 left-0 right-0 z-50 py-3 transition-colors duration-300 ease-in-out ${
-        isHomeInTop90 ? "bg-transparent" : "bg-white "
+        isHomeInTop90 ? "bg-transparent" : "bg-transparent "
       }`}
     >
       <Link to="/" aria-label="Home" className="relative inline-block">
