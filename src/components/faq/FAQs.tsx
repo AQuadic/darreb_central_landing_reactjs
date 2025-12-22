@@ -12,7 +12,7 @@ const faqsData = [
 ];
 
 const FAQs = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
 
   return (
     <section className="container pt-32 pb-17">
