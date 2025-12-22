@@ -3,6 +3,7 @@ import BusinessTypeHeader from "@/components/business/BusinessTypeHeader"
 import CompletePlatform from "@/components/business/CompletePlatform"
 import DataDriven from "@/components/business/DataDriven"
 import ShapingAthletes from "@/components/business/ShapingAthletes"
+import HomeTestimonials from "@/components/home/HomeTestimonials"
 
 const BusinessTypePage = () => {
   return (
@@ -12,6 +13,7 @@ const BusinessTypePage = () => {
       <ShapingAthletes />
       <DataDriven />
       <BrandedUserExperience />
+      <HomeTestimonials />
     </div>
   )
 }
