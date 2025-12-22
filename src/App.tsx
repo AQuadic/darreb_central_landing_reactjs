@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import PricingPage from "./pages/PricingPage";
 import BlogPage from "./pages/BlogPage";
 import FAQPage from "./pages/FAQPage";
+import FeaturesManagement from "./pages/features/FeaturesManagement";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="pricing" element={<PricingPage />} />
           <Route path="blogs" element={<BlogPage />} />
           <Route path="faqs" element={<FAQPage />} />
+          <Route path="features/management" element={<FeaturesManagement />} />
           <Route path="about" element={<div>About Page</div>} />
         </Route>
       </Routes>
