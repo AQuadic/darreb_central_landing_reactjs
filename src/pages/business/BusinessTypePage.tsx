@@ -1,5 +1,6 @@
 import BusinessTypeHeader from "@/components/business/BusinessTypeHeader"
 import CompletePlatform from "@/components/business/CompletePlatform"
+import DataDriven from "@/components/business/DataDriven"
 import ShapingAthletes from "@/components/business/ShapingAthletes"
 
 const BusinessTypePage = () => {
@@ -8,6 +9,7 @@ const BusinessTypePage = () => {
       <BusinessTypeHeader />
       <CompletePlatform />
       <ShapingAthletes />
+      <DataDriven />
     </div>
   )
 }
