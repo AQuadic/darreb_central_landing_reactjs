@@ -103,14 +103,14 @@ const Header = () => {
                   </DropdownMenuItem>
 
                   <DropdownMenuItem asChild>
-                    <Link to="/features/bookings">
+                    <Link to="/features/scheduling">
                       <HeaderBookings />
                       Bookings
                     </Link>
                   </DropdownMenuItem>
 
                   <DropdownMenuItem asChild>
-                    <Link to="/features/online_payments">
+                    <Link to="/features/management">
                       <OnlinePayments />
                       Online Payments
                     </Link>
@@ -141,7 +141,6 @@ const Header = () => {
             );
           }
 
-          // ✅ NORMAL LINKS
           return (
             <Link
               key={link.path}
