@@ -1,0 +1,19 @@
+{
+  "mobileBack": "Blogs",
+  "heading": "Our Blog, Where Knowledge, Expertise, and Sports Come Together",
+  "description": "Discover insights, tips, and industry trends designed to help you grow, manage, and elevate your sports business with confidence.",
+  "imageAlt": "blog header image"
+  ,
+  "lists": {
+    "heading": "Tips, Strategies & Inspiration",
+    "description": "Explore practical advice, proven strategies, and inspiring ideas to help you grow and manage your \nsports business more effectively.",
+    "items": {
+      "item1": "AI and Its Impact on the Sports Industry.",
+      "item2": "Beginner’s Guide to Getting Started with Sports.",
+      "item3": "How to Improve Operations in Your Gym.",
+      "item4": "Boost Retention & Attract New Clients.",
+      "item5": "Choosing the Right Gym Software.",
+      "item6": "Planning to Open a New Gym?"
+    }
+  }
+}
