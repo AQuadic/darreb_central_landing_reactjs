@@ -5,9 +5,14 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
 import { Calendar } from "../ui/calendar"
 import { format } from "date-fns"
+import { PhoneInput, type PhoneValue } from '../compound/PhoneInput'
 
 const ContactForm = () => {
     const [date, setDate] = React.useState<Date>()
+    const [phone, setPhone] = React.useState<PhoneValue>({
+        code: "EG",
+        number: "",
+    });
     return (
     <form>
         <div className="flex md:flex-row flex-col gap-6 w-full">
@@ -92,12 +97,10 @@ const ContactForm = () => {
                 >
                     Phone Number
                 </label>
-                <input 
-                    type="tel" 
-                    name="tel" 
-                    className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
-                    placeholder="+20"
-                />
+                <PhoneInput
+                    value={phone}
+                    onChange={(newValue) => setPhone(newValue)}
+                    />
             </div>
             <div className="flex flex-col gap-4 w-full">
                 <label 
