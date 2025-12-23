@@ -1,0 +1,30 @@
+{
+  "mobileBack": "Sports Academies",
+  "heading": "Elevate Your Club with a Professional Custom App",
+  "description": "Offer your members a seamless, branded experience that simplifies bookings, payments, and communication—making it easier for them to stay connected and for you to manage your club effortlessly.",
+  "button": "Request a demo",
+  "imageAlt": "see more header"
+  ,
+  "features": {
+    "list": {
+      "item1": {
+        "title": "Member Engagement",
+        "desc": "Keep your members informed with in-app notifications, class schedules, and engaging fitness content that motivates them to stay committed to your club."
+      },
+      "item2": {
+        "title": "Class Booking Made Easy",
+        "desc": "Let members book classes directly through the app while you manage schedules, cancellations, and updates with ease—ensuring a smooth, hassle-free experience."
+      },
+      "item3": {
+        "title": "Membership Management",
+        "desc": "Let members easily view and manage their memberships, track payments, handle renewals, and even pause their subscriptions—all in one convenient place."
+      }
+    }
+  }
+  ,
+  "brand": {
+    "title": "Brand Identity Customization",
+    "description": "Personalize your app to truly reflect your club’s unique brand identity. Adjust colors, logos, and fonts to match your style, ensuring every detail aligns with your club’s image. A cohesive and well-branded app not only strengthens your presence but also creates a memorable and professional experience for your members.",
+    "button": "Request a Demo"
+  }
+}

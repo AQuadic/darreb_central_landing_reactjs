@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom"
 
 const BrandIdentityCustomization = () => {
+    const { t } = useTranslation("seemore");
     return (
         <section className="bg-[#F3F7FC] md:py-12 py-4">
             <div className="container flex flex-wrap items-center justify-between gap-4">
@@ -14,9 +16,9 @@ const BrandIdentityCustomization = () => {
                 >
                 </video>
                 <div>
-                    <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center md:text-start">Brand Identity Customization</h2>
+                    <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center md:text-start">{t('brand.title')}</h2>
                     <p className="md:w-130 text-[#565555] md:text-lg text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center md:text-start">
-                        Personalize your app to truly reflect your club’s unique brand identity. Adjust colors, logos, and fonts to match your style, ensuring every detail aligns with your club’s image. A cohesive and well-branded app not only strengthens your presence but also creates a memorable and professional experience for your members.
+                        {t('brand.description')}
                     </p>
                     <Link to='/see_more'>
                         <button
@@ -25,7 +27,7 @@ const BrandIdentityCustomization = () => {
                                 borderImage: "linear-gradient(to right, #6594D0, #072E60) 1",
                             }}
                             >
-                            Request a Demo
+                            {t('brand.button')}
                         </button>
                     </Link>
                 </div>

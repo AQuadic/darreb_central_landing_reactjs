@@ -26,6 +26,9 @@ import blogAr from "./locales/ar/blog/blog.json";
 import pricingEn from "./locales/en/pricing/pricing.json";
 import pricingAr from "./locales/ar/pricing/pricing.json";
 
+import seemoreEn from "./locales/en/seemore/seemore.json";
+import seemoreAr from "./locales/ar/seemore/seemore.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -40,6 +43,7 @@ i18n
         faq: faqEn,
         blog: blogEn,
         pricing: pricingEn,
+        seemore: seemoreEn,
       },
       ar: {
         hero: heroAr,
@@ -50,6 +54,7 @@ i18n
         faq: faqAr,
         blog: blogAr,
         pricing: pricingAr,
+        seemore: seemoreAr,
       },
     },
     fallbackLng: "en",
