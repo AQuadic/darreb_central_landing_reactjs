@@ -11,6 +11,9 @@ import homefeaturesAr from "./locales/ar/home/homefeatures.json";
 import homemembershipEn from "./locales/en/home/homemembership.json";
 import homemembershipAr from "./locales/ar/home/homemembership.json";
 
+import homestandEn from "./locales/en/home/homestand.json";
+import homestandAr from "./locales/ar/home/homestand.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -20,11 +23,13 @@ i18n
         hero: heroEn,
         homefeatures: homefeaturesEn,
         homemembership: homemembershipEn,
+        homestand: homestandEn,
       },
       ar: {
         hero: heroAr,
         homefeatures: homefeaturesAr,
         homemembership: homemembershipAr,
+        homestand: homestandAr,
       },
     },
     fallbackLng: "en",
