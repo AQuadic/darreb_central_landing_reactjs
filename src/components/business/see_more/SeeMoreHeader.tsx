@@ -29,7 +29,7 @@ const SeeMoreHeader = () => {
             <img
             src="/images/business/see_more_header.png"
             alt="see_more_header"
-            className="md:mt-14.5 mt-6 md:w-full md:h-full w-62.75"
+            className="md:mt-14.5 mt-6 md:w-140.75 md:h-full w-62.75"
             />
         </div>
         </div>
