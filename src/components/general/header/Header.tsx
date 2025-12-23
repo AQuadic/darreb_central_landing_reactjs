@@ -14,7 +14,8 @@ import YourOwnApp from "@/components/icons/general/YourOwnApp";
 import HomeGateways from "@/components/icons/general/HomeGateways";
 import HeaderManagement from "@/components/icons/general/HeaderManagement";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
+import Menu from "@/components/icons/general/Menu";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -78,11 +79,11 @@ const Header = () => {
   <>
     <header
       className={`container flex items-center justify-between fixed top-0 left-0 right-0 z-50 py-3 transition-colors duration-300 ease-in-out ${
-        isHomeInTop90 ? "bg-transparent" : "bg-transparent "
+        isHomeInTop90 ? "bg-transparent" : "bg-[#15509C] "
       }`}
     >
       <Link to="/" aria-label="Home" className="relative inline-block">
-        <span className="relative block w-37.5 h-10">
+        <span className="relative block w-37.5 md:h-10">
           <img
             src="/logo_white.svg"
             alt="Logo white"
@@ -91,11 +92,9 @@ const Header = () => {
             }`}
           />
           <img
-            src="/footerLogo.svg"
+            src="/logo_white.svg"
             alt="Logo blue"
-            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
-              isHomeInTop90 ? "opacity-0" : "opacity-100"
-            }`}
+            className="w-15.25 h-6.75 absolute -top-4 inset-0 transition-opacity duration-350 ease-in-out opacity-100"
           />
         </span>
       </Link>
@@ -158,7 +157,7 @@ const Header = () => {
           }`}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu />}
         </button>
       </header>
 
@@ -171,7 +170,7 @@ const Header = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              className="fixed inset-0 bg-black/50 z-50 lg:hidden"
             />
 
             <motion.div

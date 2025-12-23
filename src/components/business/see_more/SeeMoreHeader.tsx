@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SeeMoreHeader = () => {
     return (
         <section className="relative md:pb-24 md:pt-24 pt-16 gap-6 overflow-hidden">
-        <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6 relative z-99 px-8">
+        <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6 relative z-10 px-8">
             <BackArrow />
             <p className="text-[#0F0F0F] text-xl font-semibold">Sports Academies</p>
         </Link>

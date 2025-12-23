@@ -7,7 +7,7 @@ import Unlimited from "../icons/pricing/Unlimited"
 
 const PricingCards = () => {
     return (
-        <section className="container md:my-24 my-28">
+        <section className="container md:my-24 my-20">
             <Link to='/' className="md:hidden flex items-center gap-21.75 mb-6">
                 <BackArrow />
                 <p className="text-[#0F0F0F] text-xl font-semibold">Pricing</p>
