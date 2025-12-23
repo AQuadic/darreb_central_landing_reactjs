@@ -4,34 +4,19 @@ import CustomerSupport from "../icons/pricing/CustomerSupport"
 import DataMigration from "../icons/pricing/DataMigration"
 import FreeAccount from "../icons/pricing/FreeAccount"
 import LearningResources from "../icons/pricing/LearningResources"
+import { useTranslation } from "react-i18next"
 
 const PricingFeatures = () => {
 
+    const { t } = useTranslation('pricing')
+
     const PricingFeaturesData = [
-        {
-            icon: FreeAccount,
-            title: "Free Account Setup & Team Training."
-        },
-        {
-            icon: LearningResources,
-            title: "Learning Resources to Use the System."
-        },
-        {
-            icon: DataMigration,
-            title: "Data Migration from Current System to our system."
-        },
-        {
-            icon: AccessSystem,
-            title: "Access the System from Any Device."
-        },
-        {
-            icon: AddClub,
-            title: "Add your Club Activities in our App."
-        },
-        {
-            icon: CustomerSupport,
-            title: "Live Customer Support – Always Here to Help"
-        },
+        { icon: FreeAccount, id: 'feat1' },
+        { icon: LearningResources, id: 'feat2' },
+        { icon: DataMigration, id: 'feat3' },
+        { icon: AccessSystem, id: 'feat4' },
+        { icon: AddClub, id: 'feat5' },
+        { icon: CustomerSupport, id: 'feat6' },
     ]
 
     const bgColors = [
@@ -46,7 +31,7 @@ const PricingFeatures = () => {
     return (
         <section className="container md:pb-17 pb-8">
             <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold text-center">
-                Features You’ll Enjoy in Every Plan
+                {t('features.heading')}
             </h2>
 
             <div className="md:mt-14.5 mt-4 flex flex-wrap justify-between gap-10">
@@ -58,7 +43,7 @@ const PricingFeatures = () => {
                             style={{ backgroundColor: bgColors[index] }}
                         >
                             <item.icon />
-                            <p className="text-[#0F0F0F] md:text-xl text-xs font-semibold">{item.title}</p>
+                            <p className="text-[#0F0F0F] md:text-xl text-xs font-semibold">{t(`features.list.${item.id}`)}</p>
                         </div>
                     )
                 })}

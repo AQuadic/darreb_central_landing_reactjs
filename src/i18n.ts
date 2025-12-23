@@ -23,6 +23,9 @@ import faqAr from "./locales/ar/faq/faq.json";
 import blogEn from "./locales/en/blog/blog.json";
 import blogAr from "./locales/ar/blog/blog.json";
 
+import pricingEn from "./locales/en/pricing/pricing.json";
+import pricingAr from "./locales/ar/pricing/pricing.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -36,6 +39,7 @@ i18n
         testimonials: testimonialsEn,
         faq: faqEn,
         blog: blogEn,
+        pricing: pricingEn,
       },
       ar: {
         hero: heroAr,
@@ -45,6 +49,7 @@ i18n
         testimonials: testimonialsAr,
         faq: faqAr,
         blog: blogAr,
+        pricing: pricingAr,
       },
     },
     fallbackLng: "en",

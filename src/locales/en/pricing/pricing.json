@@ -1,0 +1,94 @@
+{
+	"mobileBack": "Pricing",
+	"heading": "Fitness Plans to Match Every Goal",
+	"description": "Whether you’re just starting your fitness journey or aiming to reach peak performance, our subscription plans are designed to suit \nevery athlete’s needs and lifestyle. Pick the plan that fits you best and start achieving your goals today.",
+	"bestSeller": "Best Seller",
+	"askPrice": "Ask For Price",
+	"cards": {
+		"basic": {
+			"title": "Basic",
+			"subtitle": "Perfect for starting your sports \nbusiness journey",
+			"features": {
+				"membershipManagement": "Membership Management.",
+				"classScheduling": "Class & Appointment Scheduling.",
+				"onlinePayments": "Online Payments.",
+				"businessApp": "Business App.",
+				"staffManagement": "Staff Management.",
+				"reporting": "Reporting.",
+				"languages": "English & Arabic.",
+				"addClubActivities": "Add Club Activities in our App.",
+				"accessControl": "Access Control System.",
+				"vat": "VAT & E-Invoicing."
+			}
+		},
+		"pro": {
+			"title": "Pro",
+			"subtitle": "For growing businesses looking to \nexpand and manage efficiently",
+			"features": {
+				"membershipManagement": "Membership Management",
+				"classScheduling": "Class & Appointment Scheduling",
+				"onlinePayments": "Online Payments",
+				"powerfulDashboard": "Powerful Dashboard",
+				"businessApp": "Business App",
+				"staffManagement": "Staff Management",
+				"eventManagement": "Event Management with E-Tickets",
+				"reporting": "Reporting",
+				"accountingIntegration": "Accounting System Integration",
+				"languages": "English & Arabic",
+				"addClubActivities": "Add Club Activities in our App.",
+				"accessControl": "Access Control System",
+				"reminders": "Reminders & Notifications"
+			}
+		},
+		"unlimited": {
+			"title": "Unlimited",
+			"subtitle": "Full access to all features for established sports businesses",
+			"features": {
+				"membershipManagement": "Membership Management.",
+				"classScheduling": "Class & Appointment Scheduling.",
+				"onlinePayments": "Online Payments.",
+				"businessApp": "Business App.",
+				"staffManagement": "Staff Management.",
+				"reporting": "Reporting.",
+				"languages": "English & Arabic.",
+				"addClubActivities": "Add Club Activities in our App.",
+				"accessControl": "Access Control System.",
+				"vat": "VAT & E-Invoicing.",
+				"brandedApp": "Branded App.",
+				"eventManagement": "Event Management with E-Tickets",
+				"accountingIntegration": "Accounting System Integration",
+				"powerfulDashboard": "Powerful Dashboard",
+				"reminders": "Reminders & Notifications"
+			}
+		}
+	}
+	,
+	"features": {
+		"heading": "Features You’ll Enjoy in Every Plan",
+		"list": {
+			"feat1": "Free Account Setup & Team Training.",
+			"feat2": "Learning Resources to Use the System.",
+			"feat3": "Data Migration from Current System to our system.",
+			"feat4": "Access the System from Any Device.",
+			"feat5": "Add your Club Activities in our App.",
+			"feat6": "Live Customer Support – Always Here to Help"
+		}
+	}
+	,
+	"contact": {
+		"heading": "Can’t Find What You’re Looking For?",
+		"description": "If you didn’t find the features you need in our plans, let us know! Share what you’re looking for and we’ll make sure to support your \nsports business the best way possible.",
+		"imageAlt": "contact image",
+		"form": {
+			"name": "Name",
+			"namePlaceholder": "Enter your name",
+			"email": "Email",
+			"emailPlaceholder": "Enter your email",
+			"phone": "Phone number",
+			"phonePlaceholder": "+20",
+			"feature": "Feature",
+			"featurePlaceholder": "Write your feature",
+			"send": "Send"
+		}
+	}
+}

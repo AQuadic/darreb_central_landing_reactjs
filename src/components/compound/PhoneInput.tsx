@@ -162,7 +162,7 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
       <div className={cn("relative w-full", className)} dir="ltr">
         <div
           className={cn(
-            "relative flex items-center h-14 border border-[#C8C8C8] px-2 transition-colors rounded-4xl",
+            "relative flex items-center h-14 border border-[#C8C8C8] px-2 transition-colors rounded-4xl bg-transparent!",
             "hover:border-foreground/50",
             "bg-background text-foreground",
             "dark:border-white/20 dark:hover:border-white/40 dark:bg-transparent dark:text-white",
