@@ -3,5 +3,23 @@
     "hero_subheading": "“Manage bookings, memberships, and classes—all in one platform built to grow your sports business.”",
     "request_demo": "Request a Demo",
     "increase_revenue": "Increase Your Revenue",
-    "post_bookings": "Boost bookings, memberships, and class attendance with our all-in-one platform."
+    "post_bookings": "Boost bookings, memberships, and class attendance with our all-in-one platform.",
+
+    "get_demo": "Get Your Demo!",
+    "get_demo_desc": "Fill in your details and we’ll contact you to schedule your personalized demo.",
+    "name": "Name",
+    "company_name": "Company name",
+    "type_of_business": "Type of Business",
+    "number_of_branches": "Number of Branches",
+    "phone_number": "Phone Number",
+    "email": "Email",
+    "send": "Send",
+    "enter_your_name": "Enter your name",
+    "enter_your_company_name": "Enter your company name",
+    "choose_type": "Choose type",
+    "choose_number": "Choose number",
+    "enter_your_email": "Enter your email",
+    "enter_your_phone_number": "Enter your phone number",
+    "search_country_or_code": "Search country or code",
+    "choose_a_day": "Choose a day"
 }

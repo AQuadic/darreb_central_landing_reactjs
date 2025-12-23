@@ -9,6 +9,7 @@ import {
   type Country,
 }  from "@/constants/countries";
 import { cn } from "../../lib/utils";
+import { useTranslation } from "react-i18next";
 
 export interface PhoneValue {
   // iso2 country code (e.g. 'EG'), not the dial code
@@ -53,6 +54,7 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
     const radiusLeft = radius === "md" ? "rounded-l-md" : "rounded-l-full";
     const radiusRight = radius === "md" ? "rounded-r-md" : "rounded-r-full";
 
+    const { t } = useTranslation("hero");
     // Get current selected country. support both iso2 and dial code values for backwards compatibility
     const selectedCountry = React.useMemo(() => {
       // if value.code matches an iso2 directly, prefer that
@@ -152,9 +154,9 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
     };
 
     // Translations for placeholders
-    const resolvedPlaceholder = placeholder ?? "Enter your phone number";
+    const resolvedPlaceholder = placeholder ?? t("enter_your_phone_number");
     const resolvedSearchPlaceholder =
-      searchPlaceholder ?? ("search country or code");
+      searchPlaceholder ?? t("search_country_or_code");
 
     return (
       <div className={cn("relative w-full", className)} dir="ltr">
