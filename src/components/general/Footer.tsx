@@ -6,8 +6,10 @@ import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Email from "../icons/general/Email"
 import Phone from "../icons/general/Phone"
+import { useTranslation } from "react-i18next"
 
 const Footer = () => {
+    const { t } = useTranslation("hero");
     const { pathname } = useLocation();
     const [isHomeInTop90, setIsHomeInTop90] = useState(false);
     
@@ -48,7 +50,7 @@ const Footer = () => {
                         className="mx-auto md:mx-0"
                     />
                     <p className="text-[#565555] text-base font-medium mt-3 md:text-start text-center">
-                        Powerful tools to simplify management, boost revenue, and keep your sports business thriving.
+                        {t('powerful_solution_footer')}
                     </p>
                     <div className="flex items-center md:justify-start justify-center gap-4 mt-6">
                         <Facebbok />
@@ -58,7 +60,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col md:items-start items-center md:mt-0 mt-8">
-                    <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">Links</h2>
+                    <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">{t('links')}</h2>
                     <nav className="flex flex-col md:items-start items-center gap-3">
                         {NavLinks.map((link) => (
                         <Link
@@ -75,19 +77,19 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col md:items-start items-center md:mt-0 mt-6">
-                    <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">Privacy</h2>
+                    <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">{t('privacy')}</h2>
                     <div className="flex flex-col gap-5">
                         <Link to='/terms' className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center">
-                            Terms & Conditions
+                            {t('terms')}
                         </Link>
                         <Link to='/privacy' className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center">
-                            Privacy Policy
+                            {t('privacy_policy')}
                         </Link>
                     </div>
                 </div>
 
                 <div className="flex flex-col md:items-start items-center md:mt-0 mt-4">
-                    <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">Contact Us</h2>
+                    <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">{t('contact_us')}</h2>
                     <a href="" className="flex  items-center gap-2">
                         <Email />
                         <p className="text-[#0F0F0F] text-base leading-[100%]">company@gmail.com</p>
