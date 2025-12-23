@@ -6,49 +6,51 @@ import SportsAcademies from '../../../../public/images/home/SportsAcademies.jpg'
 import SportsFederations from '../../../../public/images/home/SportsFederations.jpg'
 import EquestrianClubs from '../../../../public/images/home/EquestrianClubs.jpg'
 import yoga from '../../../../public/images/home/Yoga.jpg'
+import { useTranslation } from 'react-i18next'
 
 const HomePefetcFor = () => {
+    const { t } = useTranslation("hero");
     const SportsData = [
         {
             image: CrossFit,
-            text: "CrossFit",
+            text: t("crossfit"),
         },
         {
             image: gym,
-            text: "Gym",
+            text: t("gym"),
         },
         {
             image: FitnessTraining,
-            text: "Fitness Training",
+            text: t("fitness_training"),
         },
         {
             image: arts,
-            text: "Martial Arts",
+            text: t("martial_arts"),
         },
         {
             image: SportsAcademies,
-            text: "Sports Academies",
+            text: t("sports_academies"),
         },
         {
             image: SportsFederations,
-            text: "Sports Federations",
+            text: t("sports_federations"),
         },
         {
             image: EquestrianClubs,
-            text: "Equestrian Clubs",
+            text: t("equestrian_clubs"),
         },
         {
             image: yoga ,
-            text: "Yoga",
+            text: t("yoga"),
         },
     ]
     return (
         <section className="my-17">
             <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">
-                Perfect for Every Sports Business
+                {t("perfect_for")}
             </h2>
             <p className="text-[#565555] md:text-2xl text-xs font-medium leading-[150%] md:mt-6 mt-3 text-center">
-                Our platform meets the needs of any gym, club, or academy, making management simple and <br /> efficient
+                {t("perfect_for_desc")}
             </p>
             
             <div className='md:mt-14 mt-4 grid md:grid-cols-4 grid-cols-2 gap-6 container'>
