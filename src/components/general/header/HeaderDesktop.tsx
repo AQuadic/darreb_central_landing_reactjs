@@ -51,11 +51,12 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
 
   return (
     <header
-      className={`container hidden lg:flex items-center justify-between fixed top-0 left-0 right-0 z-50 py-3 transition-colors duration-300 ease-in-out ${
+      className={`hidden lg:block fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
         isHomeInTop90 ? "bg-transparent" : "bg-white"
       }`}
     >
-      <Link to="/" aria-label="Home" className="relative inline-block">
+      <div className="container mx-auto flex items-center justify-between py-3">
+        <Link to="/" aria-label="Home" className="relative inline-block">
         <span className="relative block w-37.5 h-10">
           <img
             src="/logo_white.svg"
@@ -151,6 +152,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
       <div className="flex items-center gap-6">
         <ChangeLanguage isHome={isHomeInTop90} />
         <RequestDemo isHome={isHomeInTop90} />
+      </div>
       </div>
     </header>
   );
