@@ -76,7 +76,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
       label: t("analytics"),
     },
     {
-      path: "/features/yourOwnApp",
+      path: "/features/your_own_app",
       icon: <YourOwnApp />,
       label: t("your_own_app"),
     },
