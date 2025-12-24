@@ -38,6 +38,9 @@ import managementeAr from "./locales/ar/features/Management.json";
 import ownappEn from "./locales/en/features/ownapp.json";
 import ownappAr from "./locales/ar/features/ownapp.json";
 
+import schedualEn from "./locales/en/features/schedual.json";
+import schedualAr from "./locales/ar/features/schedual.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -56,6 +59,7 @@ i18n
         businesstype: businesstypeEn,
         management: managementeEn,
         ownapp: ownappEn,
+        schedual: schedualEn
       },
       ar: {
         hero: heroAr,
@@ -70,6 +74,7 @@ i18n
         businesstype: businesstypeAr,
         management: managementeAr,
         ownapp: ownappAr,
+        schedual: schedualAr
       },
     },
     fallbackLng: "en",
