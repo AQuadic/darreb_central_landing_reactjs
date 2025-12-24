@@ -78,7 +78,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
         {NavLinks.map((link) => {
           const label = i18n.language === "ar" ? link.nameAr : link.nameEn;
 
-          if (link.path === "/features") {
+          if (link.path === "/features/management") {
             return (
               <div key={link.path} className="relative group">
                 <Link
