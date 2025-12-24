@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
+
 const DataDriven = () => {
+    const { t } = useTranslation("businesstype");
     return (
         <section className="container md:py-17 py-8 flex md:flex-row flex-col-reverse items-center justify-between gap-6">
             <div>
                 <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center md:text-start">
-                    Data-Driven Growth
+                    {t("dataDrivenTitle")}
                 </h2>
                 <p className="md:w-132.5 text-[#565555] md:text-lg text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center md:text-start">
-                    Take your sports academy to the next level. Our advanced analytics provide valuable insights to monitor your performance and make informed decisions—guiding you toward sustainable growth and ensuring your clients’ satisfaction.
+                    {t("dataDrivenDescription")}
                 </p>
                 <div className="rounded-4xl">
                     <button
@@ -15,7 +18,7 @@ const DataDriven = () => {
                             borderImage: "linear-gradient(to right, #6594D0, #072E60) 1",
                         }}
                         >
-                        Request a Demo
+                        {t("requestDemo")}
                     </button>
                 </div>
             </div>

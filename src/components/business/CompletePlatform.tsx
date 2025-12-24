@@ -1,23 +1,25 @@
+import { useTranslation } from "react-i18next";
 import Modern from "../icons/business/Modern";
 import Smart from "../icons/business/Smart";
 import Smooth from "../icons/business/Smooth";
 
 const CompletePlatform = () => {
+    const { t } = useTranslation("businesstype");
     const PricingFeaturesData = [
         {
             icon: Smooth,
-            title: "Smooth & Intuitive Experience",
-            content: "A user-friendly interface that helps you manage everything with ease."
+            title: t('smoothTitle'),
+            content: t('smoothDescription')
         },
         {
             icon: Modern,
-            title: "Modern & Professional Look",
-            content: "A clean, premium design that elevates your academy’s image."
+            title: t('modernTitle'),
+            content: t('modernDescription')
         },
         {
             icon: Smart,
-            title: "Smart Organization for Details",
-            content: "From schedules to  payments everything organized in one place."
+            title: t('smartTitle'),
+            content: t('smartDescription')
         }
     ]
 
@@ -29,9 +31,11 @@ const CompletePlatform = () => {
 
     return (
         <section className="container md:py-17 py-8">
-            <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">A Complete Platform to Manage & Grow Your Sports Academy</h2>
+            <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">
+                {t("completePlatformTitle")}
+            </h2>
             <p className="text-[#565555] md:text-lg text-sm font-medium leading-[150%] text-center md:mt-6 mt-3">
-                Empower your academy with a seamless system that simplifies management, enhances operations, and elevates every part of the <br /> athletic experience.
+                {t("completePlatformDescription")}
             </p>
 
             <div className="md:mt-14.5 mt-4 flex flex-wrap justify-between md:gap-10 gap-4">

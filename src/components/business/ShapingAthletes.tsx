@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 const ShapingAthletes = () => {
+    const { t } = useTranslation("businesstype");
     return (
         <section className="bg-[#F3F7FC] py-8 mt-8">
             <div className="container flex flex-wrap items-center justify-between gap-8">
@@ -12,11 +15,11 @@ const ShapingAthletes = () => {
 
                 <div>
                 <h2 className="text-[#001B3F] md:text-[40px] text-base font-semibold text-center md:text-start">
-                    Shaping the Athletes of Tomorrow
+                    {t("shapingAthletesTitle")}
                 </h2>
 
                 <p className="md:w-150 text-[#565555] md:text-xl text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center md:text-start">
-                    We’re here to empower your sports academy. A system that makes it easy to create, schedule, and manage activities—giving you full control over your academy’s operations. It’s all about building the perfect environment for your athletes to grow, thrive, and achieve their fitness goals.
+                    {t("shapingAthletesDescription")}
                 </p>
 
                 <div className="rounded-4xl">
@@ -26,7 +29,7 @@ const ShapingAthletes = () => {
                             borderImage: "linear-gradient(to right, #6594D0, #072E60) 1",
                         }}
                         >
-                        Request a Demo
+                        {t("requestDemo")}
                     </button>
                 </div>
 

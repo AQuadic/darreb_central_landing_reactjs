@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import BackArrow from "../icons/pricing/BackArrow";
+import { useTranslation } from "react-i18next";
 
 const BusinessTypeHeader = () => {
+    const { t } = useTranslation("businesstype");
     return (
         <section className="relative md:pb-24 md:pt-24 pt-16 gap-6 overflow-hidden">
         <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6 relative z-10 px-8">
             <BackArrow />
-            <p className="text-[#0F0F0F] text-xl font-semibold">Sports Academies</p>
+            <p className="text-[#0F0F0F] text-xl font-semibold">{t("sportsAcademies")}</p>
         </Link>
         <div className="container flex md:flex-row flex-col-reverse items-center justify-between">
             <div className="absolute inset-0">
@@ -20,15 +22,15 @@ const BusinessTypeHeader = () => {
 
         <div className="relative z-10 flex-1">
             <h2 className="text-[#001B3F] md:text-[40px] text-base font-semibold text-center md:text-start">
-                Elevate your sports academy to a new level.
+                {t("elevateTitle")}
             </h2>
 
             <p className="md:w-xl text-[#565555] md:text-xl text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center md:text-start">
-                Discover the power of managing your sports academy with an integrated system that reduces operational complexity, enhances customer experiences, and tracks players’ performance — allowing you to focus on what truly matters: developing your athletes.
+                {t("elevateDescription")}
             </p>
 
             <button className="w-full h-14 text-[#FEFEFE] text-lg font-semibold mt-10 bg-linear-to-r from-[#6594D0] to-[#071C36] rounded-3xl">
-            Request a demo
+            {t("requestDemo")}
             </button>
         </div>
 
