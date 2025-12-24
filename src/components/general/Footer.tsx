@@ -79,12 +79,23 @@ const Footer = () => {
                 <div className="flex flex-col md:items-start items-center md:mt-0 mt-6">
                     <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">{t('privacy')}</h2>
                     <div className="flex flex-col gap-5">
-                        <Link to='/terms' className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center">
+                        <Link
+                            to="/terms"
+                            className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center
+                                        transition-colors duration-300 ease-in-out
+                                        hover:text-[#15509C] hover:font-semibold"
+                            >
                             {t('terms')}
-                        </Link>
-                        <Link to='/privacy' className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center">
+                            </Link>
+
+                            <Link
+                            to="/privacy"
+                            className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center
+                                        transition-colors duration-300 ease-in-out
+                                        hover:text-[#15509C] hover:font-semibold"
+                            >
                             {t('privacy_policy')}
-                        </Link>
+                            </Link>
                     </div>
                 </div>
 
