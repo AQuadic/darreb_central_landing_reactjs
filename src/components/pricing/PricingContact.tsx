@@ -76,7 +76,7 @@ const PricingContact = () => {
                             </textarea>
                         </div>
 
-                        <button className="md:w-146 w-full h-14 bg-[linear-gradient(90deg,#15509C_0%,#071C36_100%)] rounded-4xl mt-6 text-[#FEFEFE] text-lg font-semibold">
+                        <button className="md:w-146 w-full h-14 bg-[linear-gradient(90deg,#6594D0_0%,#071C36_100%)] rounded-4xl mt-6 text-[#FEFEFE] text-lg font-semibold">
                             {t('contact.form.send')}
                         </button>
                     </form>
