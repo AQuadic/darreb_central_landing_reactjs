@@ -40,7 +40,7 @@ function authRequestInterceptor(config: InternalAxiosRequestConfig) {
 
 // Get the base URL with fallback
 const getBaseURL = () => {
-  return "https://academy.obranchy.com/api";
+  return "https://cp.darrebpro.com/api";
 };
 
 export const axios = Axios.create({
