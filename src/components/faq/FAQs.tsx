@@ -5,18 +5,35 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { Link } from "react-router-dom";
 import BackArrow from "../icons/pricing/BackArrow";
 import { useTranslation } from "react-i18next";
-
-const faqsData = [
-  { id: "item1" },
-  { id: "item2" },
-  { id: "item3" },
-  { id: "item4" },
-  { id: "item5" },
-];
+import { useQuery } from "@tanstack/react-query";
+import { getBusinessFaqs } from "@/apis/faq";
+import { Loader } from "lucide-react";
 
 const FAQs = () => {
-  const { t } = useTranslation("faq");
+  const { t, i18n } = useTranslation("faq");
+  const lang = i18n.language as "ar" | "en";
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["business-faqs"],
+    queryFn: () => getBusinessFaqs(),
+  });
+
+  if (isLoading) {
+    return (
+      <section className="container md:py-32 py-20 text-center flex items-center justify-center">
+        <Loader />
+      </section>
+    );
+  }
+
+  if (isError) {
+    return (
+      <section className="container md:pt-32 pt-20 text-center">
+        <p>Failed to load FAQs</p>
+      </section>
+    );
+  }
 
   return (
     <section className="container md:pt-32 pt-20 pb-17">
@@ -41,26 +58,38 @@ const FAQs = () => {
       </p>
 
       <div className="mt-12 space-y-4">
-        <Accordion type="single" collapsible value={openItem} onValueChange={setOpenItem}>
-          {faqsData.map((faq, index) => {
-            const isOpen = openItem === faq.id;
+        <Accordion
+          type="single"
+          collapsible
+          value={openItem}
+          onValueChange={setOpenItem}
+        >
+          {data?.data.map((faq, index) => {
+            const itemId = String(faq.id);
+            const isOpen = openItem === itemId;
+
             return (
               <AccordionItem
                 key={faq.id}
-                value={faq.id}
+                value={itemId}
                 className={`border border-[#C8C8C8] rounded-4xl px-4 transition-colors mt-10 [&_svg]:hidden ${
                   isOpen ? "bg-[#F3F7FC]" : "bg-white"
                 }`}
               >
                 <AccordionTrigger className="flex justify-between items-center">
                   <p className="text-[#0F0F0F] md:text-2xl text-sm font-semibold leading-[100%]">
-                    <span className="md:text-[32px] text-base mr-4">{`0${index + 1}`}</span>
-                    {t(`items.${faq.id}.question`)}
+                    <span className="md:text-[32px] text-base mr-4">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    {faq.question[lang]}
                   </p>
-                  <span className="text-3xl font-bold">{isOpen ? "-" : "+"}</span>
+                  <span className="text-3xl font-bold">
+                    {isOpen ? "-" : "+"}
+                  </span>
                 </AccordionTrigger>
+
                 <AccordionContent>
-                  {t(`items.${faq.id}.answer`)}
+                  {faq.answer[lang]}
                 </AccordionContent>
               </AccordionItem>
             );
