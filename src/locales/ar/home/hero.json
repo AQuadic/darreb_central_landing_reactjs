@@ -51,5 +51,8 @@
     "privacy": "الخصوصية",
     "terms": "الشروط والأحكام",
     "privacy_policy": "سياسة الخصوصية",
-    "contact_us": "اتصل بنا"
+    "contact_us": "اتصل بنا",
+    "enter_your_message": "اكتب رسالتك",
+    "message": "الرسالة",
+    "sending" :"جار الارسال ..."
 }

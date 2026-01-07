@@ -7,34 +7,95 @@ import { Calendar } from "../ui/calendar"
 import { format } from "date-fns"
 import { PhoneInput, type PhoneValue } from '../compound/PhoneInput'
 import { useTranslation } from 'react-i18next'
+import { createBusinessSuggestion } from "@/apis/suggestions";
+import { toast } from "sonner";
 
 const ContactForm = () => {
-    const { t } = useTranslation("hero");
-    const [date, setDate] = React.useState<Date>()
-    const [phone, setPhone] = React.useState<PhoneValue>({
-        code: "EG",
-        number: "",
+  const { t } = useTranslation("hero");
+
+  const [loading, setLoading] = React.useState(false);
+  const [title, setTitle] = React.useState("");
+  const [companyName, setCompanyName] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [phone, setPhone] = React.useState<PhoneValue>({
+    code: "EG",
+    number: "",
+  });
+  const [email, setEmail] = React.useState("");
+  const [typeOfBusiness, setTypeOfBusiness] = React.useState("");
+  const [numberOfBranches, setNumberOfBranches] = React.useState("");
+  const [date, setDate] = React.useState<Date | undefined>();
+
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+        setLoading(true);
+
+    const response = await createBusinessSuggestion({
+        title,
+        email: email || undefined,
+        phone: phone.number ? phone.number : undefined,
+        phone_country: phone.number ? phone.code : undefined,
+        message,
+        type: "business",
+        company_name: companyName || undefined,
+        type_of_business: typeOfBusiness || undefined,
+        number_of_branches: numberOfBranches || undefined,
+        date: date ? date.toISOString() : undefined,
     });
+
+        if (response?.data?.message) {
+        toast.success(response.data.message);
+        } else {
+        toast.success(t("success_message"));
+        }
+
+        setTitle("");
+        setCompanyName("");
+        setMessage("");
+        setEmail("");
+        setPhone({ code: "EG", number: "" });
+        setTypeOfBusiness("");
+        setNumberOfBranches("");
+        setDate(undefined);
+
+    } catch (error: any) {
+        console.error(error);
+
+        const apiMessage = error?.response?.data?.message;
+        if (apiMessage) {
+        toast.error(apiMessage);
+        } else if (error?.response?.data?.errors) {
+        const allErrors = Object.values(error.response.data.errors)
+            .flat()
+            .join(" • ");
+        toast.error(allErrors);
+        } else {
+        toast.error(t("error_message"));
+        }
+    } finally {
+        setLoading(false);
+    }
+    };
+
     return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <div className="flex md:flex-row flex-col gap-6 w-full">
-            {/* name */}
             <div className="flex flex-col gap-4 w-full">
-                <label 
-                    htmlFor="name"
-                    className="text-[#0F0F0F] text-base font-medium"
-                >
+                <label htmlFor="name" className="text-[#0F0F0F] text-base font-medium">
                     {t("name")}
                 </label>
                 <input 
                     type="text" 
                     name="name" 
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     className="md:w-[384px] w-87.5 h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_name")}
                 />
             </div>
             {/* Company name */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="company_name"
                     className="text-[#0F0F0F] text-base font-medium"
@@ -44,6 +105,8 @@ const ContactForm = () => {
                 <input 
                     type="text" 
                     name="company_name" 
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
                     className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_company_name")}
                 />
@@ -51,15 +114,14 @@ const ContactForm = () => {
         </div>
 
         <div className="flex md:flex-row flex-col gap-6 mt-10">
-            {/* Type of Business */}
-            <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="type_of_business"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
                     {t("type_of_business")}
                 </label>
-                <Select>
+                <Select value={typeOfBusiness} onValueChange={setTypeOfBusiness}>
                 <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
                     <SelectValue placeholder={t("choose_type")} />
                 </SelectTrigger>
@@ -71,14 +133,14 @@ const ContactForm = () => {
                 </Select>
             </div>
             {/* Number of Branches */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="NOF_branches"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
                     {t("number_of_branches")}
                 </label>
-                <Select>
+                <Select value={numberOfBranches} onValueChange={setNumberOfBranches}>
                 <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
                     <SelectValue placeholder={t("choose_number")} />
                 </SelectTrigger>
@@ -94,26 +156,25 @@ const ContactForm = () => {
         <div className="flex md:flex-row flex-col gap-6 mt-10">
             <div className="flex flex-col gap-4 w-full">
                 <label 
-                    htmlFor="name"
+                    htmlFor="phone"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
                     {t("phone_number")}
                 </label>
-                <PhoneInput
-                    value={phone}
-                    onChange={(newValue) => setPhone(newValue)}
-                    />
+                <PhoneInput value={phone} onChange={setPhone} />
             </div>
             <div className="flex flex-col gap-4 w-full">
                 <label 
-                    htmlFor="company_name"
+                    htmlFor="email"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    {t("company_name")}
+                    {t("email")}
                 </label>
-                <input 
+                <input
                     type="email" 
                     name="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_email")}
                 />
@@ -121,7 +182,10 @@ const ContactForm = () => {
         </div>
 
         <div className="flex flex-col gap-4 mt-10">
-            <label htmlFor="request_demo" className="text-[#0F0F0F] text-base font-medium">
+            <label
+                htmlFor="request_demo"
+                className="text-[#0F0F0F] text-base font-medium"
+                >
                 {t("request_demo")}
             </label>
             <Popover>
@@ -129,7 +193,7 @@ const ContactForm = () => {
                 <Button
                     variant="outline"
                     data-empty={!date}
-                    className="data-[empty=true]:text-muted-foreground w-70 justify-between text-left font-normal"
+                    className="w-full justify-between text-left font-normal"
                 >
                     {date ? format(date, "PPP") : <span>{t("choose_a_day")}</span>}
                     <CalendarIcon />
@@ -141,8 +205,30 @@ const ContactForm = () => {
             </Popover>
         </div>
 
-        <button className="w-full h-14 text-[#FEFEFE] text-lg font-semibold mt-10 bg-[linear-gradient(90deg,#6594D0_0%,#071C36_100%)] rounded-4xl">
-            {t('send')}
+        <div className="flex flex-col gap-4 mt-6">
+            <label
+            htmlFor="message"
+            className="text-[#0F0F0F] text-base font-medium"
+            >
+            {t("message")}
+            </label>
+            <textarea
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder={t("enter_your_message")}
+            className="w-full h-28 border border-[#C8C8C8] rounded-4xl px-4 py-2"
+            />
+        </div>
+
+        <button
+            type="submit"
+            disabled={loading}
+            className="w-full h-14 mt-10 rounded-4xl
+            bg-[linear-gradient(90deg,#6594D0_0%,#071C36_100%)]
+            text-white font-semibold disabled:opacity-50"
+        >
+            {loading ? t("sending") : t("send")}
         </button>
     </form>
     )

@@ -51,5 +51,8 @@
     "privacy": "Privacy",
     "terms": "Terms & Conditions",
     "privacy_policy": "Privacy Policy",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "enter_your_message": "Enter your message",
+    "message": "Message",
+    "sending" :"Sending ..."
 }
