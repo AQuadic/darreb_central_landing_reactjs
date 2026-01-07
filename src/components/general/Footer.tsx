@@ -47,7 +47,7 @@ const Footer = () => {
           <img
             src="/new_logo.png"
             alt="footer logo"
-            className="mx-auto md:mx-0"
+            className="mx-auto md:mx-0 w-33.5 h-15"
           />
           <p className="text-[#565555] text-base font-medium mt-3 md:text-start text-center">
             {t("powerful_solution_footer")}
