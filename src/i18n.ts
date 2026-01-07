@@ -77,7 +77,6 @@ i18n
         schedual: schedualAr,
       },
     },
-    lng: "en",
     fallbackLng: "en",
     defaultNS: "hero",
     interpolation: {
