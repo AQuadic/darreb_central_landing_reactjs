@@ -13,10 +13,11 @@ const FAQs = () => {
   const { t, i18n } = useTranslation("faq");
   const lang = i18n.language as "ar" | "en";
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+  const [page, setPage] = useState(1);
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["business-faqs"],
-    queryFn: () => getBusinessFaqs(),
+    queryKey: ["business-faqs", page],
+    queryFn: () => getBusinessFaqs(page),
   });
 
   if (isLoading) {
@@ -79,7 +80,7 @@ const FAQs = () => {
                 <AccordionTrigger className="flex justify-between items-center">
                   <p className="text-[#0F0F0F] md:text-2xl text-sm font-semibold leading-[100%]">
                     <span className="md:text-[32px] text-base mr-4">
-                      {String(index + 1).padStart(2, "0")}
+                      {String(index + 1 + (page - 1) * data.per_page).padStart(2, "0")}
                     </span>
                     {faq.question[lang]}
                   </p>
@@ -95,6 +96,24 @@ const FAQs = () => {
             );
           })}
         </Accordion>
+      </div>
+
+      <div className="flex justify-center gap-4 mt-8">
+        <button
+          disabled={!data?.prev_page_url}
+          onClick={() => setPage((p) => Math.max(p - 1, 1))}
+          className={`px-4 py-2 rounded ${!data?.prev_page_url ? "bg-gray-300 cursor-not-allowed" : "bg-[#071C36] text-white"}`}
+        >
+          {t("prev")}
+        </button>
+
+        <button
+          disabled={!data?.next_page_url}
+          onClick={() => setPage((p) => p + 1)}
+          className={`px-4 py-2 rounded ${!data?.next_page_url ? "bg-gray-300 cursor-not-allowed" : "bg-[#071C36] text-white"}`}
+        >
+          {t("next")}
+        </button>
       </div>
     </section>
   );
