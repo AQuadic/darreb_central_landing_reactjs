@@ -29,5 +29,7 @@
 		"heading": "Still have questions?",
 		"description": "Can’t find the answers you’re looking for in our FAQs? Reach out to us and we’ll be happy to help.",
 		"button": "Contact Us"
-	}
+	},
+	"prev": "Previous",
+    "next": "Next"
 }
