@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./components/general/Layout";
+// import Layout from "./components/general/Layout";
 import HomePage from "./pages/HomePage";
 import PricingPage from "./pages/PricingPage";
 import BlogPage from "./pages/BlogPage";
@@ -16,6 +16,7 @@ import FormLayout from "./components/general/FormLayout";
 import { useMeta } from "./apis/application";
 import { useMetaStore } from "./store/useMetaStore";
 import { useEffect } from "react";
+import ComingSoon from "./pages/ComingSoon";
 
 function App() {
   const { data: metaData, isLoading } = useMeta();
@@ -35,7 +36,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<ComingSoon />}>
           <Route index element={<HomePage />} />
           <Route path="pricing" element={<PricingPage />} />
           <Route path="blogs" element={<BlogPage />} />
