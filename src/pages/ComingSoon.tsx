@@ -7,8 +7,6 @@ type TimeLeft = {
   seconds: number;
 };
 
-const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-
 const calculateTimeLeft = (endTime: number): TimeLeft => {
   const diff = endTime - Date.now();
 
@@ -25,7 +23,7 @@ const calculateTimeLeft = (endTime: number): TimeLeft => {
 };
 
 const ComingSoon = () => {
-  const [endTime] = useState(() => Date.now() + ONE_WEEK_MS);
+  const endTime = new Date('2026-01-26T00:00:00').getTime();
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(
     calculateTimeLeft(endTime)
