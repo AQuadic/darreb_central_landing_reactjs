@@ -41,6 +41,10 @@ import ownappAr from "./locales/ar/features/ownapp.json";
 import schedualEn from "./locales/en/features/schedual.json";
 import schedualAr from "./locales/ar/features/schedual.json";
 
+import not_foundEn from "./locales/en/not-found/not_found.json";
+import not_foundAr from "./locales/ar/not-found/not_found.json";
+
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -60,6 +64,7 @@ i18n
         management: managementEn,
         ownapp: ownappEn,
         schedual: schedualEn,
+        not_found: not_foundEn,
       },
       ar: {
         hero: heroAr,
@@ -75,6 +80,7 @@ i18n
         management: managementAr,
         ownapp: ownappAr,
         schedual: schedualAr,
+        not_found: not_foundAr,
       },
     },
     fallbackLng: "en",

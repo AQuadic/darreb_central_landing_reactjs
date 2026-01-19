@@ -17,6 +17,7 @@ import { useMeta } from "./apis/application";
 import { useMetaStore } from "./store/useMetaStore";
 import { useEffect } from "react";
 import ComingSoon from "./pages/ComingSoon";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const { data: metaData, isLoading } = useMeta();
@@ -48,6 +49,7 @@ function App() {
           <Route path="/see_more" element={<SeeMorePage />} />
           <Route path="about" element={<div>About Page</div>} />
         </Route>
+        <Route path="/*" element={<NotFound/>} />
         <Route path="application" element={<FormLayout />}>
           <Route index element={<ApplicationBranch />}></Route>
           <Route path="kit-request" element={<KitRequest />}></Route>
