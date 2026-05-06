@@ -18,6 +18,7 @@ import { useMetaStore } from "./store/useMetaStore";
 import { useEffect } from "react";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
+import Layout from "./components/general/Layout";
 
 function App() {
   const { data: metaData, isLoading } = useMeta();
@@ -37,7 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ComingSoon />}>
+        <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="pricing" element={<PricingPage />} />
           <Route path="blogs" element={<BlogPage />} />
