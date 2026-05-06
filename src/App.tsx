@@ -16,7 +16,7 @@ import FormLayout from "./components/general/FormLayout";
 import { useMeta } from "./apis/application";
 import { useMetaStore } from "./store/useMetaStore";
 import { useEffect } from "react";
-import ComingSoon from "./pages/ComingSoon";
+// import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/general/Layout";
 
