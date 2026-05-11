@@ -48,7 +48,7 @@ const HomeHero = () => {
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="w-300! max-h-screen overflow-scroll">
+      <DialogContent className="w-300! max-h-screen overflow-y-scroll ">
         <DialogHeader>
           <DialogTitle className="text-[#001B3F] text-center">
             {t('get_demo')}
@@ -58,50 +58,50 @@ const HomeHero = () => {
                 {t('get_demo_desc')}
             </p>
                 <form>
-                  <div className="flex flex-wrap gap-6">
+                  <div className="flex lg:flex-row flex-col gap-6">
                       {/* name */}
-                      <div className="flex flex-col gap-4">
+                      <div className="w-full flex flex-col gap-4">
                           <label 
                               htmlFor="name"
-                              className="text-[#0F0F0F] text-base font-medium"
+                              className="text-[#0F0F0F] text-base font-medium text-start"
                           >
                               {t('name')}
                           </label>
                           <input 
                               type="text" 
                               name="name" 
-                              className="w-137 h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                              className="lg:w-137 w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                               placeholder={t('enter_your_name')}
                           />
                       </div>
                       {/* Company name */}
-                      <div className="flex flex-col gap-4">
+                      <div className="w-full flex flex-col gap-4">
                           <label 
                               htmlFor="company_name"
-                              className="text-[#0F0F0F] text-base font-medium"
+                              className="text-[#0F0F0F] text-base font-medium text-start"
                           >
                               {t('company_name')}
                           </label>
                           <input 
                               type="text" 
                               name="company_name" 
-                              className="w-137 h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                              className="lg:w-137 w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                               placeholder={t('enter_your_company_name')}
                           />
                       </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-6 mt-10">
+                  <div className="flex lg:flex-row flex-col gap-6 mt-10">
                       {/* Type of Business */}
-                      <div className="flex flex-col gap-4">
+                      <div className="w-full flex flex-col gap-4">
                           <label 
                               htmlFor="type_of_business"
-                              className="text-[#0F0F0F] text-base font-medium"
+                              className="text-[#0F0F0F] text-base font-medium text-start"
                           >
                               {t('type_of_business')}
                           </label>
                           <Select>
-                          <SelectTrigger className="w-137 h-14! rounded-4xl">
+                          <SelectTrigger className="lg:w-137 w-full h-14! rounded-4xl">
                               <SelectValue placeholder={t('choose_type')} />
                           </SelectTrigger>
                           <SelectContent>
@@ -112,15 +112,15 @@ const HomeHero = () => {
                           </Select>
                       </div>
                       {/* Number of Branches */}
-                      <div className="flex flex-col gap-4">
+                      <div className="w-full flex flex-col gap-4">
                           <label 
                               htmlFor="NOF_branches"
-                              className="text-[#0F0F0F] text-base font-medium"
+                              className="text-[#0F0F0F] text-base font-medium text-start"
                           >
                               {t('number_of_branches')}
                           </label>
                           <Select>
-                          <SelectTrigger className="w-137 h-14! rounded-4xl">
+                          <SelectTrigger className="lg:w-137 w-full h-14! rounded-4xl">
                               <SelectValue placeholder={t('choose_number')} />
                           </SelectTrigger>
                           <SelectContent>
@@ -132,11 +132,11 @@ const HomeHero = () => {
                       </div>
                   </div>
 
-                  <div className="flex md:flex-row flex-col gap-6 mt-10 w-full">
+                  <div className="flex lg:flex-row flex-col gap-6 mt-10 w-full">
                       <div className="flex flex-col gap-4 w-full">
                           <label 
                               htmlFor="name"
-                              className="text-[#0F0F0F] text-base font-medium"
+                              className="text-[#0F0F0F] text-base font-medium text-start"
                           >
                               {t('phone_number')}
                           </label>
@@ -145,24 +145,24 @@ const HomeHero = () => {
                             onChange={(newValue) => setPhone(newValue)}
                             />
                       </div>
-                      <div className="flex flex-col gap-4">
+                      <div className="w-full flex flex-col gap-4">
                           <label 
                               htmlFor="company_name"
-                              className="text-[#0F0F0F] text-base font-medium"
+                              className="text-[#0F0F0F] text-base font-medium text-start"
                           >
                               {t('email')}
                           </label>
                           <input 
                               type="email" 
                               name="email" 
-                              className="w-137 h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                              className="lg:w-137 w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                               placeholder={t('enter_your_email')}
                           />
                       </div>
                   </div>
 
                   <div className="flex flex-col gap-4 mt-10">
-                      <label htmlFor="request_demo" className="text-[#0F0F0F] text-base font-medium">
+                      <label htmlFor="request_demo" className="text-[#0F0F0F] text-base font-medium text-start">
                           {t('request_demo')}
                       </label>
                       <Popover>
