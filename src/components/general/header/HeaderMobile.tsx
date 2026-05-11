@@ -134,7 +134,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
             <img
               src="/new_logo.png"
               alt="Logo white"
-              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
+              className={`absolute inset-0 ltr:-left-8 rtl:-right-8 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-100" : "opacity-0"
               }`}
             />
