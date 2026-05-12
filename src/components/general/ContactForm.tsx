@@ -80,7 +80,7 @@ const ContactForm = () => {
 
     return (
     <form onSubmit={handleSubmit}>
-        <div className="flex md:flex-row flex-col gap-6 w-full">
+        <div className="flex lg:flex-row flex-col gap-6 w-full">
             <div className="flex flex-col gap-4 w-full">
                 <label htmlFor="name" className="text-[#0F0F0F] text-base font-medium">
                     {t("name")}
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     name="name" 
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="md:w-[384px] w-87.5 h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="lg:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_name")}
                 />
             </div>
@@ -107,13 +107,13 @@ const ContactForm = () => {
                     name="company_name" 
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
-                    className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="lg:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_company_name")}
                 />
             </div>
         </div>
 
-        <div className="flex md:flex-row flex-col gap-6 mt-10">
+        <div className="flex lg:flex-row flex-col gap-6 mt-10">
                 <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="type_of_business"
@@ -122,7 +122,7 @@ const ContactForm = () => {
                     {t("type_of_business")}
                 </label>
                 <Select value={typeOfBusiness} onValueChange={setTypeOfBusiness}>
-                <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
+                <SelectTrigger className="lg:w-[384px] w-full h-14! rounded-4xl">
                     <SelectValue placeholder={t("choose_type")} />
                 </SelectTrigger>
                 <SelectContent>
@@ -141,7 +141,7 @@ const ContactForm = () => {
                     {t("number_of_branches")}
                 </label>
                 <Select value={numberOfBranches} onValueChange={setNumberOfBranches}>
-                <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
+                <SelectTrigger className="lg:w-[384px] w-full h-14! rounded-4xl">
                     <SelectValue placeholder={t("choose_number")} />
                 </SelectTrigger>
                 <SelectContent>
@@ -153,7 +153,7 @@ const ContactForm = () => {
             </div>
         </div>
 
-        <div className="flex md:flex-row flex-col gap-6 mt-10">
+        <div className="flex lg:flex-row flex-col gap-6 mt-10">
             <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="phone"
@@ -175,7 +175,7 @@ const ContactForm = () => {
                     name="email" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="lg:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_email")}
                 />
             </div>

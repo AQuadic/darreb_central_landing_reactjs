@@ -12,7 +12,7 @@ const BlogContact = () => {
                 {t('reach_out')}
             </p>
 
-            <div className="md:mt-17 mt-6 flex flex-wrap items-center justify-between gap-6">
+            <div className="md:mt-17 mt-6 flex lg:flex-row flex-col lg:items-center justify-between gap-6">
                 <ContactForm />
                 <div>
                     <img 
