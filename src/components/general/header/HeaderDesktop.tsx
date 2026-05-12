@@ -1,7 +1,7 @@
 "use client";
 
 import { NavLinks } from "@/constants/NavLinks";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import ChangeLanguage from "./ChangeLanguage";
 import RequestDemo from "./RequestDemo";
 import HeaderScheduling from "@/components/icons/general/HeaderScheduling";
@@ -101,6 +101,10 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
     { path: "/business-type", icon: <Yoga />, labelKey: t("yoga") },
   ];
 
+  const location = useLocation();
+  const isFeaturesActive = location.pathname.startsWith("/features");
+  const isBusinessTypeActive = location.pathname.startsWith("/business-type");
+
   return (
     <header
       className={`hidden lg:block fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
@@ -134,14 +138,18 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
             if (link.path === "/features/management") {
               return (
                 <div key={link.path} className="relative group">
-                  <button
-                    type="button"
-                    className={`mx-4 transition-colors duration-300 ease-in-out ${
-                      isHomeInTop90 ? "text-white" : "text-foreground"
-                    }`}
-                  >
-                    {label}
-                  </button>
+              <button
+                type="button"
+                className={`mx-4 transition-colors duration-300 ease-in-out ${
+                  isFeaturesActive
+                    ? "text-[#15509C]"
+                    : isHomeInTop90
+                    ? "text-white"
+                    : "text-foreground"
+                }`}
+              >
+                {label}
+              </button>
                   <div className="absolute ltr:left-0 rtl:-right-14 top-full mt-2 w-48 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {featuresSubmenu.map((item) => (
                       <Link
@@ -161,10 +169,14 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
             if (link.path === "/business-type") {
               return (
                 <div key={link.path} className="relative group">
-                  <button
+                 <button
                     type="button"
                     className={`mx-4 transition-colors duration-300 ease-in-out ${
-                      isHomeInTop90 ? "text-white" : "text-foreground"
+                      isBusinessTypeActive
+                        ? "text-[#15509C]"
+                        : isHomeInTop90
+                        ? "text-white"
+                        : "text-foreground"
                     }`}
                   >
                     {label}
@@ -188,15 +200,21 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
             }
 
             return (
-              <Link
+              <NavLink
                 key={link.path}
                 to={link.path}
-                className={`mx-4 transition-colors duration-300 ease-in-out ${
-                  isHomeInTop90 ? "text-white" : "text-foreground"
-                }`}
+                className={({ isActive }) =>
+                  `mx-4 transition-colors duration-300 ease-in-out ${
+                    isActive
+                      ? "text-[#15509C]"
+                      : isHomeInTop90
+                      ? "text-white"
+                      : "text-foreground"
+                  }`
+                }
               >
                 {label}
-              </Link>
+              </NavLink>
             );
           })}
         </nav>
