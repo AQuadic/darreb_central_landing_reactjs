@@ -33,14 +33,14 @@ const LocationCard = ({
     >
       {/* Mobile corner icons (absolute) - visible only on small screens */}
       <div className="sm:hidden">
-        <div
+        {/* <div
           className="absolute top-10 left-20 pointer-events-none"
           aria-hidden
         >
           {selected ? <Icon1Active /> : <Icon1 />}
-        </div>
+        </div> */}
 
-        <div className="absolute top-5 right-5 pointer-events-none" aria-hidden>
+        {/* <div className="absolute top-5 right-5 pointer-events-none" aria-hidden>
           {selected ? <Icon2Active /> : <Icon2 />}
         </div>
 
@@ -49,14 +49,14 @@ const LocationCard = ({
           aria-hidden
         >
           {selected ? <Icon3Active /> : <Icon3 />}
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           className="absolute bottom-5 left-5 pointer-events-none"
           aria-hidden
         >
           {selected ? <Icon2Active /> : <Icon2 />}
-        </div>
+        </div> */}
       </div>
       <div className="mb-3">
         {selected ? <LocationBlue /> : <LocationBlack />}
