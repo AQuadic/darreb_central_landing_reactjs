@@ -1,7 +1,8 @@
 import { axios } from "@/lib/axios";
 
 export interface CreateSuggestionPayload {
-  title: string;
+  name: string;
+  // title: string;
   message: string;
   type: "business" | "user";
   email?: string;

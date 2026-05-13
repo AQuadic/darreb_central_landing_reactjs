@@ -14,7 +14,7 @@ const ContactForm = () => {
   const { t } = useTranslation("hero");
 
   const [loading, setLoading] = React.useState(false);
-  const [title, setTitle] = React.useState("");
+  const [name, setName] = React.useState("");
   const [companyName, setCompanyName] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [phone, setPhone] = React.useState<PhoneValue>({
@@ -32,7 +32,7 @@ const ContactForm = () => {
         setLoading(true);
 
     const response = await createBusinessSuggestion({
-        title,
+        name,
         email: email || undefined,
         phone: phone.number ? phone.number : undefined,
         phone_country: phone.number ? phone.code : undefined,
@@ -50,7 +50,7 @@ const ContactForm = () => {
         toast.success(t("success_message"));
         }
 
-        setTitle("");
+        setName("");
         setCompanyName("");
         setMessage("");
         setEmail("");
@@ -88,8 +88,8 @@ const ContactForm = () => {
                 <input 
                     type="text" 
                     name="name" 
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="lg:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder={t("enter_your_name")}
                 />
